@@ -8,6 +8,8 @@ export class App {
     this.app = express();
 
     this.initializeMiddlewares();
+    this.initializeRoutes(controllers);
+    this.initializeErrorHandling();
   }
 
   public listen() {
@@ -19,5 +21,15 @@ export class App {
   private initializeMiddlewares() {
     this.app.use(express.json());
     this.app.use(passport.initialize());
+  }
+
+  private initializeErrorHandling() {
+    this.app.use(errorMiddleware);
+  }
+
+  private initializeRoutes(controllers: Controller[]) {
+    controllers.map(controller => {
+      this.app.use(controller.router);
+    });
   }
 }
