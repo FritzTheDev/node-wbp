@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as passport from 'passport';
 import { Controller } from './interfaces/Controller.interface';
+import { errorMiddleware } from './middleware/error.middleware';
 
 export class App {
   public app: express.Application;
