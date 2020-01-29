@@ -34,7 +34,7 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "tsnd src/server.ts"
   },
   "repository": {
     "type": "git",
