@@ -7,14 +7,18 @@ import { validateEnv } from './utils/validateEnv';
 
 validateEnv();
 
-async () => {
+const main = async () => {
   try {
     const connection = await createConnection(config);
     await connection.runMigrations();
+    console.log('lol');
   } catch (error) {
-    return error;
+    console.log(error);
+    throw error;
   }
   const app = new App([]);
 
   app.listen();
 };
+
+main();
