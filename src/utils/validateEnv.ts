@@ -3,7 +3,7 @@ import { cleanEnv, port, str } from 'envalid';
 export const validateEnv = () => {
   cleanEnv(process.env, {
     JWT_SECRET: str(),
-    PORT: port({ default: 8000 }),
+    PORT: port(),
     POSTGRES_HOST: str(),
     POSTGRES_PORT: str(),
     POSTGRES_USER: str(),
