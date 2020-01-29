@@ -11,9 +11,7 @@ const main = async () => {
   try {
     const connection = await createConnection(config);
     await connection.runMigrations();
-    console.log('lol');
   } catch (error) {
-    console.log(error);
     throw error;
   }
   const app = new App([]);
