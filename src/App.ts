@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as passport from 'passport';
+import * as morgan from 'morgan';
 import { Controller } from './interfaces/Controller.interface';
 import { errorMiddleware } from './middleware/error.middleware';
 
@@ -22,6 +23,7 @@ export class App {
   private initializeMiddlewares() {
     this.app.use(express.json());
     this.app.use(passport.initialize());
+    this.app.use(morgan('common'));
   }
 
   private initializeErrorHandling() {
