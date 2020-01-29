@@ -5,9 +5,8 @@ import { App } from './App';
 import { config } from './ormconfig';
 import { validateEnv } from './utils/validateEnv';
 
-validateEnv();
-
 const main = async () => {
+  validateEnv();
   try {
     const connection = await createConnection(config);
     await connection.runMigrations();
