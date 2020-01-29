@@ -29,7 +29,7 @@ export class Listing {
 
   @ManyToOne(
     () => User,
-    (user: User) => user.listing
+    (user: User) => user.listings
   )
   public owner: User;
 }
