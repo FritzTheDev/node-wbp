@@ -9,7 +9,7 @@ export class CreateUserDTO {
   public email: string;
 
   @IsString()
-  public password_hash: string;
+  public password: string;
 
   @IsOptional()
   @ValidateNested()
