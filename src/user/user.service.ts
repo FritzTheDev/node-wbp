@@ -4,6 +4,7 @@ import { getRepository } from "typeorm";
 import { EmailInUseException } from "../exceptions/emailInUse.exception";
 import { User } from "./user.entity";
 import { CreateUserDTO } from "./createUser.dto";
+import { LoginUserDTO } from "./loginUser.dto";
 
 export class UserService {
   private userRepository = getRepository(User);
@@ -19,8 +20,15 @@ export class UserService {
     });
     await this.userRepository.save(user);
     user.password = undefined;
-    const tokenData = this.createToken(user);
-    return {};
+    const token = this.createToken(user);
+    return { user, token };
+  }
+
+  public async login(userData: LoginUserDTO) {
+    const user = await this.userRepository.findOne({ email: userData.email });
+    user.password = undefined;
+    const token = this.createToken(user);
+    return { user, token };
   }
 
   public createToken(user: User): string {
