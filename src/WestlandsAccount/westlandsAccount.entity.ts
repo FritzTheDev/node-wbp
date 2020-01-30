@@ -1,5 +1,5 @@
-import { PrimaryGeneratedColumn, Column, ManyToOne, Entity } from 'typeorm';
-import { User } from '../user/user.entity';
+import { PrimaryGeneratedColumn, Column, ManyToOne, Entity } from "typeorm";
+import { User } from "../user/user.entity";
 
 @Entity()
 export class WestlandsAccount {

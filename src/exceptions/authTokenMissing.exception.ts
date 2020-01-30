@@ -1,7 +1,7 @@
-import { HttpException } from './http.exception';
+import { HttpException } from "./http.exception";
 
 export class AuthTokenMissingException extends HttpException {
   constructor() {
-    super(401, 'Authentication Token Missing');
+    super(401, "Authentication Token Missing");
   }
 }

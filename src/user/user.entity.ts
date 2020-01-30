@@ -1,6 +1,6 @@
-import { Entity, Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Listing } from '../listing/listing.entity';
-import { WestlandsAccount } from '../WestlandsAccount/westlandsAccount.entity';
+import { Entity, Column, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Listing } from "../listing/listing.entity";
+import { WestlandsAccount } from "../WestlandsAccount/westlandsAccount.entity";
 
 @Entity()
 export class User {

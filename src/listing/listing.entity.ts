@@ -4,8 +4,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
   CreateDateColumn
-} from 'typeorm';
-import { User } from '../user/user.entity';
+} from "typeorm";
+import { User } from "../user/user.entity";
 
 @Entity()
 export class Listing {

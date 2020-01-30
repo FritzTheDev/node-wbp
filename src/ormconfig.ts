@@ -1,16 +1,16 @@
-import { ConnectionOptions } from 'typeorm';
+import { ConnectionOptions } from "typeorm";
 
 export const config: ConnectionOptions = {
-  type: 'postgres',
+  type: "postgres",
   host: process.env.POSTGRES_HOST,
   port: Number(process.env.POSTGRES_PORT),
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+  entities: [__dirname + "/../**/*.entity{.ts,.js}"],
   synchronize: true,
-  migrations: ['src/migrations/*.ts'],
+  migrations: ["src/migrations/*.ts"],
   cli: {
-    migrationsDir: 'src/migrations'
+    migrationsDir: "src/migrations"
   }
 };
