@@ -6,7 +6,6 @@ import { BadCredentialsException } from "../exceptions/BadCredentials.exception"
 import { User } from "./user.entity";
 import { CreateUserDTO } from "./createUser.dto";
 import { LoginUserDTO } from "./loginUser.dto";
-import { HttpException } from "../exceptions/http.exception";
 
 export class UserService {
   private userRepository = getRepository(User);
