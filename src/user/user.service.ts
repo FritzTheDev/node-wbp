@@ -34,7 +34,7 @@ export class UserService {
         throw new BadCredentialsException();
       }
     } catch (err) {
-      // Unexpected error
+      // Unexpected error with hashing
       throw err;
     }
     user.password = undefined;
