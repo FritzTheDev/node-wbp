@@ -37,7 +37,7 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start:dev": "tsnd src/server.ts"
+    "dev": "tsnd src/server.ts"
   },
   "repository": {
     "type": "git",
