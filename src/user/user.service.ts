@@ -5,7 +5,7 @@ import { EmailInUseException } from "../exceptions/emailInUse.exception";
 import { User } from "./user.entity";
 import { CreateUserDTO } from "./createUser.dto";
 
-class UserService {
+export class UserService {
   private userRepository = getRepository(User);
 
   public async register(userData: CreateUserDTO) {
