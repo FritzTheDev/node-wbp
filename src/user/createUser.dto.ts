@@ -11,7 +11,6 @@ export class CreateUserDTO {
   @IsString()
   public password: string;
 
-  @IsOptional()
   @ValidateNested()
   public westlandsAccount?: CreateWestlandsAccountDTO;
 }
