@@ -6,7 +6,7 @@ import { BadCredentialsException } from "../exceptions/BadCredentials.exception"
 import { User } from "./user.entity";
 import { CreateUserDTO } from "./createUser.dto";
 import { LoginUserDTO } from "./loginUser.dto";
-import { HttpException } from "src/exceptions/http.exception";
+import { HttpException } from "../exceptions/http.exception";
 
 export class UserService {
   private userRepository = getRepository(User);
@@ -29,12 +29,13 @@ export class UserService {
   public async login(userData: LoginUserDTO) {
     const user = await this.userRepository.findOne({ email: userData.email });
     try {
-      const isMatch = await bcrypt.compare(userData.password, user.password);
-      if (!isMatch) {
+      // throws if password is not a match
+      if (!(await bcrypt.compare(userData.password, user.password))) {
         throw new BadCredentialsException();
       }
-    } catch {
-      throw new HttpException();
+    } catch (err) {
+      // Unexpected error
+      throw err;
     }
     user.password = undefined;
     const token = this.createToken(user);
