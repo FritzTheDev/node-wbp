@@ -4,8 +4,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
   CreateDateColumn
-} from 'typeorm';
-import { User } from '../user/user.entity';
+} from "typeorm";
+import { User } from "../user/user.entity";
 
 @Entity()
 export class Listing {
@@ -29,7 +29,7 @@ export class Listing {
 
   @ManyToOne(
     () => User,
-    (user: User) => user.listing
+    (user: User) => user.listings
   )
   public owner: User;
 }
